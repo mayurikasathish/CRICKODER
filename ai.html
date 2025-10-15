@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crickoder | Talk to AI Cricketers</title>
+  <link rel="stylesheet" href="ai.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Quicksand&display=swap" rel="stylesheet" />
+ 
+
+</head>
+<body class="fade-in">
+
+  <a href="index.html" class="back-btn">← Home</a>
+
+  <div class="carousel-wrapper">
+  <div class="carousel3D" id="carousel">
+    <div class="cricketer-card">Dhoni</div>
+    <div class="cricketer-card">Dravid</div>
+    <div class="cricketer-card">Rohit</div>
+    <div class="cricketer-card">Kohli</div>
+    <div class="cricketer-card">Raina</div>
+    <div class="cricketer-card">Yuvraj</div>
+  </div>
+</div>
+<div class="carousel-buttons">
+  <button onclick="rotateCarousel(-1)">◀</button>
+  <button onclick="rotateCarousel(1)">▶</button>
+</div>
+
+
+
+  <div class="chatbox">
+    <div class="chat-window" id="chat-window">
+      <div class="message bot">Pick a cricketer to begin your coding innings!</div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Ask your question..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+  
+  
+
+
+
+  <script src="fade.js"></script>
+  <script>
+    function sendMessage() {
+      const input = document.getElementById("userInput");
+      const message = input.value.trim();
+      if (message) {
+        const chatWindow = document.getElementById("chat-window");
+        const userMsg = document.createElement("div");
+        userMsg.className = "message user";
+        userMsg.textContent = message;
+        chatWindow.appendChild(userMsg);
+
+        const botReply = document.createElement("div");
+        botReply.className = "message bot";
+        botReply.textContent = "Pretend AI Cricketer: That's an interesting way to face that bug!";
+        chatWindow.appendChild(botReply);
+
+        input.value = "";
+        chatWindow.scrollTop = chatWindow.scrollHeight;
+      }
+    }
+  </script>
+  <script>
+  const radius = 350;
+  const cards = document.querySelectorAll('.cricketer-card');
+  const total = cards.length;
+  let angle = 0;
+  let curr = 0;
+
+  function positionCards() {
+    cards.forEach((card, i) => {
+      const theta = (2 * Math.PI * i) / total;
+      const x = radius * Math.sin(theta);
+      const z = radius * Math.cos(theta);
+      card.style.transform = `translateX(${x}px) translateZ(${z}px) rotateY(${(360 / total) * i}deg)`;
+    });
+  }
+
+  function rotateCarousel(dir) {
+    curr += dir;
+    const newAngle = (360 / total) * curr;
+    document.getElementById("carousel").style.transform = `translateZ(-${radius}px) rotateY(${newAngle}deg)`;
+  }
+
+  positionCards();
+  document.getElementById("carousel").style.transform = `translateZ(-${radius}px) rotateY(0deg)`;
+</script>
+
+</body>
+</html>

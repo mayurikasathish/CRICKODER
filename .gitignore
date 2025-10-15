@@ -1,0 +1,9 @@
+# Editor settings
+.vscode/
+
+# Large files
+avatars/
+
+# OS files
+.DS_Store
+Thumbs.db

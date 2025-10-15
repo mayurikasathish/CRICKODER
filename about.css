@@ -1,0 +1,103 @@
+/* background + base */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(to bottom, #2e003e, #6a0572, #ff85c1);
+  color: #fff;
+  overflow-x: hidden;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+body.loaded {
+  opacity: 1;
+}
+
+.about-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  text-align: center;
+}
+
+/* glowing heading */
+.glow-title {
+  font-size: 2.8rem;
+  font-family: 'Orbitron', cursive;
+  color: #f8d7ff;
+  text-shadow: 0 0 15px #ff5fc0, 0 0 25px #ff85c1;
+  margin-bottom: 30px;
+}
+
+/* paragraph */
+.intro-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #ffd1f7;
+  padding: 0 20px;
+}
+.intro-text span {
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 0 8px #ff5fc0;
+}
+
+/* cards section */
+.highlights {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 20px;
+}
+
+.highlight-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #ffb3ec;
+  box-shadow: 0 0 12px #ff6ec7, 0 0 20px #ff85c1;
+  border-radius: 20px;
+  padding: 20px;
+  width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.highlight-card:hover {
+  transform: scale(1.05);
+}
+
+.highlight-card h3 {
+  color: #ffe2ff;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.highlight-card p {
+  color: #ffeaf7;
+  font-size: 0.95rem;
+}
+
+/* home button */
+.home-btn {
+  display: inline-block;
+  margin-top: 50px;
+  padding: 12px 25px;
+  background-color: transparent;
+  color: #ffbefd;
+  border: 2px solid #ffbefd;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-family: 'Orbitron', sans-serif;
+  text-decoration: none;
+  letter-spacing: 1.2px;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 10px #ff5fc0;
+}
+
+.home-btn:hover {
+  background: rgba(255, 191, 253, 0.1);
+  color: #fff;
+  box-shadow: 0 0 18px #ff69b4, 0 0 30px #f093fb;
+  transform: scale(1.05);
+}

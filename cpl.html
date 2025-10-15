@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coding Premier League</title>
+  <link rel="stylesheet" href="cpl.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="neon-glow">⚡ Coding Premier League ⚡</header>
+
+  <section class="teams-section">
+    <div class="team-card" onclick="joinTeam('Debuggers')">
+      <img src="assets/team-debuggers.png" alt="Debuggers Logo" />
+      <h3>The Debuggers</h3>
+      <p>"We don't fix bugs. We crush them."</p>
+    </div>
+
+    <div class="team-card" onclick="joinTeam('Stack Smashers')">
+      <img src="assets/team-stack.png" alt="Stack Smashers" />
+      <h3>Stack Smashers</h3>
+      <p>"Stack overflow? We *overflow* with wins."</p>
+    </div>
+
+    <div class="team-card" onclick="joinTeam('Null XI')">
+      <img src="assets/team-null.png" alt="Null XI" />
+      <h3>Null XI</h3>
+      <p>"We return null, except for victory."</p>
+    </div>
+  </section>
+
+  <div class="join-msg" id="join-msg">Pick your coding squad to enter the arena...</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
